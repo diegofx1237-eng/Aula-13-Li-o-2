@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Cadastro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Imagem de fundo similar à da captura */
+      background-image: url('https://unsplash.com');
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 780px;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .header {
+      background-color: #0000ff;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: inset 0 0 12px rgba(255, 69, 0, 0.85);
+    }
+
+    .form-body {
+      background-color: rgba(25, 25, 25, 0.72);
+      padding: 30px 45px 35px 35px;
+      color: #ffffff;
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .form-row.top-align {
+      align-items: flex-start;
+    }
+
+    .label-col {
+      width: 170px;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    .form-row.top-align .label-col {
+      padding-top: 2px;
+    }
+
+    .input-col {
+      flex: 1;
+      display: flex;
+      gap: 15px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field-group.half {
+      flex: 1;
+    }
+
+    .field-group.ddd {
+      width: 135px;
+      flex-shrink: 0;
+    }
+
+    .field-group.telefone {
+      flex: 1;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      height: 36px;
+      border: none;
+      border-radius: 5px;
+      padding: 0 12px;
+      font-size: 15px;
+      background-color: #ffffff;
+      color: #333333;
+      outline: none;
+    }
+
+    select {
+      background-color: #dcdcdc;
+      color: #555555;
+      cursor: pointer;
+    }
+
+    .sublabel {
+      font-size: 13px;
+      color: #e0e0e0;
+      margin-top: 6px;
+    }
+
+    .radio-section {
+      margin-top: 10px;
+      margin-bottom: 24px;
+    }
+
+    .radio-question {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .radio-options {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 19px;
+      cursor: pointer;
+    }
+
+    .radio-label input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #2196F3;
+      cursor: pointer;
+    }
+
+    .btn-submit {
+      background-color: #32a896;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      width: 245px;
+      height: 44px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #288b7c;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+
+      .label-col {
+        width: 100%;
+      }
+
+      .input-col {
+        flex-direction: column;
+      }
+
+      .field-group.ddd {
+        width: 100%;
+      }
+
+      .btn-submit {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      Formulário de Cadastro
+    </div>
+
+    <form class="form-body">
+      <!-- Nome e Sobrenome -->
+      <div class="form-row top-align">
+        <div class="label-col">Nome e<br>Sobrenome</div>
+        <div class="input-col">
+          <div class="field-group half">
+            <input type="text" name="nome" required>
+            <span class="sublabel">Nome</span>
+          </div>
+          <div class="field-group half">
+            <input type="text" name="sobrenome" required>
+            <span class="sublabel">Sobrenome</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empresa -->
+      <div class="form-row">
+        <div class="label-col">Empresa</div>
+        <div class="input-col">
+          <input type="text" name="empresa">
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-row">
+        <div class="label-col">Email</div>
+        <div class="input-col">
+          <input type="email" name="email" required>
+        </div>
+      </div>
+
+      <!-- Telefone com DDD -->
+      <div class="form-row top-align">
+        <div class="label-col">Telefone com<br>DDD</div>
+        <div class="input-col">
+          <div class="field-group ddd">
+            <input type="tel" name="ddd" maxlength="3">
+            <span class="sublabel">DDD</span>
+          </div>
+          <div class="field-group telefone">
+            <input type="tel" name="telefone">
+            <span class="sublabel">Telefone</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sexo -->
+      <div class="form-row">
+        <div class="label-col">Sexo</div>
+        <div class="input-col">
+          <select name="sexo">
+            <option value="" disabled selected>--Selecione a Opção</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Você é iniciante? -->
+      <div class="radio-section">
+        <div class="radio-question">Você é iniciante?</div>
+        <div class="radio-options">
+          <label class="radio-label">
+            <input type="radio" name="iniciante" value="sim" checked>
+            Sim
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="iniciante" value="nao">
+            Não
+          </label>
+        </div>
+      </div>
+
+      <!-- Botão Enviar -->
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+  </div>
+
+</body>
+</html>

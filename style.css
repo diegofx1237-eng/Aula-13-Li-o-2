@@ -1,0 +1,94 @@
+@import url('https://googleapis.com');
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* altura mínima da página (vh = tamanho para responsividade) */
+    box-sizing: border-box; /* caixa para formulário */
+}
+
+h1 {
+    padding-top: 50px;
+    margin: 0;
+    text-align: center;
+    color: rgb(245, 0, 0);
+    font-size: 100px;
+}
+
+h2 {
+    padding-top: 50px;
+    margin: 0;
+    text-align: center;
+    color: blue;
+    font-size: 20px;
+}
+
+.campo {
+    display: flex; /* flexível / ajustável */
+    flex-direction: column; /* coluna */
+}
+
+.formulario {
+    background-color: rgb(255, 255, 254);
+    border: 1px solid black;
+    padding: 50px 100px;
+    border-radius: 35px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.botao {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 20px 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+input, select {
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+button:hover {
+    transition: background-color 0.4s ease, border 0.3s ease;
+    background-color: chartreuse;
+    color: #000;
+}
+
+.imagem {
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.imagem::file-selector-button {
+    margin-right: 10px;
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(139, 255, 61);
+    color: #000;
+}
+
+.cabecalho-formulario {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 20px;
+}
